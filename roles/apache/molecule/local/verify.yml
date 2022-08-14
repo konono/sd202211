@@ -1,0 +1,18 @@
+---
+- name: 'Verify'
+  hosts: 'all'
+  gather_facts: false
+  tasks:
+    - name: 'Check httpd server is running'
+      ansible.builtin.uri:
+        url: 'http://localhost'
+        status_code: 200
+        return_content: true
+      register: 'result'
+
+    - name: 'assert return content'
+      ansible.builtin.assert:
+        that:
+          - "'Apache is running' in result.content"
+        fail_msg: 'Apache deploy failed...'
+        success_msg: 'Apache successfully deployed!!!'

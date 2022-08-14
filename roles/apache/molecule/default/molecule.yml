@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: registry.access.redhat.com/ubi8/toolbox:8.5
+    pre_build_image: true
+    command: /sbin/init
+    env:
+      HOME: /root/
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      retry_files_enabled: false
+      deprecation_warnings: false
+      gathering: 'explicit'
+verifier:
+  name: ansible

@@ -1,0 +1,34 @@
+---
+- name: 'Ensure apache is installed'
+  ansible.builtin.package:
+    name:
+      - 'httpd'
+    state: 'present'
+  become: true
+  notify: 'apache-restart'
+
+- name: 'Allow apache port in firewall'
+  ansible.posix.firewalld:
+    zone: 'public'
+    port: '80/tcp'
+    permanent: true
+    state: 'enabled'
+  become: true
+  tags:
+    - 'molecule-notest'
+
+- name: 'Ensure proper Apache configuration'
+  ansible.builtin.template:
+    src: 'httpd.conf.j2'
+    dest: '/etc/httpd/conf/httpd.conf'
+    mode: 0644
+  become: true
+  notify: 'apache-restart'
+
+- name: 'Deploy index.html'
+  ansible.builtin.template:
+    src: 'index.html.j2'
+    dest: '/var/www/html/index.html'
+    mode: 0644
+  become: true
+  notify: 'apache-restart'

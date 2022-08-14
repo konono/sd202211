@@ -1,0 +1,61 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+###================================================   Script   ==================================================###
+$script = <<-SCRIPT
+# set molecule to password.
+echo molecule | passwd --stdin root
+mkdir /root/.ssh
+chmod 700 /root/.ssh
+touch /root/.ssh/authorized_keys
+
+# Install developemnt tools for python build.
+dnf groupinstall -y "Development Tools"
+dnf install -y zlib zlib-devel bzip2-devel openssl-devel sqlite-devel readline-devel libffi-devel sshpass
+
+# setup docker repository.
+cat <<'EOF' > /etc/yum.repos.d/docker-ce.repo
+[docker-ce-stable]
+name=Docker CE Stable - $basearch
+baseurl=https://download.docker.com/linux/centos/\$releasever/\$basearch/stable
+enabled=1
+gpgcheck=1
+gpgkey=https://download.docker.com/linux/centos/gpg
+EOF
+
+# Install docker.
+dnf install -y docker-ce docker-ce-cli containerd.io
+systemctl enable --now docker
+# setup python devlopment envrionment.
+cp -p /vagrant/python_bootstrap.sh ~/ && chmod +x ~/python_bootstrap.sh && cd ~/
+./python_bootstrap.sh
+SCRIPT
+
+###================================================   Main   ==================================================###
+Vagrant.configure("2") do |config|
+  config.vm.box = "almalinux/8"
+  config.vm.box_check_update = false
+  config.ssh.username = 'vagrant'
+
+  config.vm.define :node1 do |node1|
+    node1.vm.hostname = "node1"
+    node1.vm.provider :virtualbox do |v|
+      v.cpus = 1
+      v.memory = 2048
+    end ###--- End Provider
+    node1.vm.disk :disk, size: "100GB", primary: true
+    node1.vm.network "private_network", ip: "192.168.60.1"
+  end ###--- End VM.Define
+
+  config.vm.define :node2 do |node2|
+    node2.vm.hostname = "node2"
+    node2.vm.provider :virtualbox do |v|
+      v.cpus = 1
+      v.memory = 2048
+    end ###--- End Provider
+    node2.vm.disk :disk, size: "100GB", primary: true
+    node2.vm.network "private_network", ip: "192.168.60.2"
+  end ###--- End VM.Define
+  ###------------------------------   Provisioning   -------------------------------###
+  config.vm.provision "shell", inline: $script
+end #    EOF

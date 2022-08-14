@@ -1,0 +1,38 @@
+---
+dependency:
+  name: galaxy
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .
+driver:
+  name: delegated
+  options:
+    managed: false
+platforms:
+  - name: node1
+  - name: node2
+provisioner:
+  name: ansible
+  inventory:
+    hosts:
+      all:
+        children:
+          group_a:
+            hosts:
+              node1:
+                ansible_host: 192.168.60.1
+                ansible_password: molecule
+          group_b:
+            hosts:
+              node2:
+                ansible_host: 192.168.60.2
+                ansible_password: molecule
+  config_options:
+    defaults:
+      retry_files_enabled: false
+      deprecation_warnings: false
+      host_key_checking: false
+      gathering: 'explicit'
+verifier:
+  name: ansible

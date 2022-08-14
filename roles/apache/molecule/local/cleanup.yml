@@ -1,0 +1,23 @@
+---
+- name: 'Cleanup'
+  hosts: 'all'
+  gather_facts: false
+  tasks:
+    - name: 'Cleanup http server'
+      ansible.builtin.package:
+        name:
+          - 'httpd'
+        state: 'absent'
+      become: true
+
+    - name: 'Cleanup httpd config directory'
+      ansible.builtin.file:
+        path: '/etc/httpd'
+        state: 'absent'
+      become: true
+
+    - name: 'Cleanup index.html'
+      ansible.builtin.file:
+        path: '/var/www/html/index.html'
+        state: 'absent'
+      become: true

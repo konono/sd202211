@@ -7,7 +7,7 @@ name = "pypi"
 ansible-lint = "*"
 yamllint = "*"
 molecule = {extras = ["docker", "podman"], version = "*"}
-ansible = "*"
+ansible-core = "*"
 setuptools = "*"
 tox = "*"
 pre-commit = "*"

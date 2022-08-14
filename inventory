@@ -1,0 +1,12 @@
+all:
+  children:
+    group_a:
+      hosts:
+        node1:
+          ansible_host: 192.168.60.1
+          ansible_password: molecule
+    group_b:
+      hosts:
+        node2:
+          ansible_host: 192.168.60.2
+          ansible_password: molecule
