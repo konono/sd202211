@@ -5,7 +5,7 @@
       - 'httpd'
     state: 'present'
   become: true
-  notify: 'apache-restart'
+  notify: 'Restart apache'
 
 - name: 'Allow apache port in firewall'
   ansible.posix.firewalld:
@@ -23,7 +23,7 @@
     dest: '/etc/httpd/conf/httpd.conf'
     mode: 0644
   become: true
-  notify: 'apache-restart'
+  notify: 'Restart apache'
 
 - name: 'Deploy index.html'
   ansible.builtin.template:
@@ -31,4 +31,4 @@
     dest: '/var/www/html/index.html'
     mode: 0644
   become: true
-  notify: 'apache-restart'
+  notify: 'Restart apache'
