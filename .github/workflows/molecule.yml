@@ -21,14 +21,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip3 install tox
+          pip3 install tox tox-gh-actions
 
       - name: Cache tox environments
         id: cache-tox
         uses: actions/cache@v2
         with:
           path: .tox
-          key: ${{ runner.os }}-${{ matrix.python }}-toxcache
+          key: ${{ runner.os }}-${{ matrix.python-version }}-toxcache
 
       - name: Test with tox
         run: tox
