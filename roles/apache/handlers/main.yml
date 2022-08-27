@@ -1,6 +1,6 @@
 ---
-- name: apache-restart
+- name: 'Restart apache'
   ansible.builtin.service:
-    name: httpd
-    state: restarted
+    name: 'httpd'
+    state: 'restarted'
   become: true
