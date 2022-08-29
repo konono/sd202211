@@ -10,8 +10,7 @@ chmod 700 /root/.ssh
 touch /root/.ssh/authorized_keys
 
 # Install developemnt tools for python build.
-dnf groupinstall -y "Development Tools"
-dnf install -y zlib zlib-devel bzip2-devel openssl-devel sqlite-devel readline-devel libffi-devel sshpass
+dnf install -y gcc zlib zlib-devel bzip2-devel readline-devel sqlite-devel openssl openssl-devel git libffi-devel tar make xz-devel sshpass
 
 # setup docker repository.
 cat <<'EOF' > /etc/yum.repos.d/docker-ce.repo
