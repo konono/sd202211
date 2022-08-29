@@ -10,8 +10,6 @@ molecule = {extras = ["docker", "podman"], version = "*"}
 ansible-core = "*"
 setuptools = "*"
 tox = "*"
-pre-commit = "*"
-selinux = "*"
 
 [dev-packages]
 
