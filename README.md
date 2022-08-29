@@ -221,4 +221,4 @@ INFO     Verifier completed successfully.
 === snip ===
 ```
 
-ログが長いためここでは省略いたしますが、```Verifier completed successfully.```が確認できればmolecule testは成功です。
+ログが長いためここでは省略いたしますが、```Verifier completed successfully.```が確認できればmoleculeのインストールは無事完了です！お疲れさまでした！
