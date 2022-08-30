@@ -1,0 +1,936 @@
+molecule_testnode % vagrant up
+Bringing machine 'node1' up with 'virtualbox' provider...
+Bringing machine 'node2' up with 'virtualbox' provider...
+==> node1: You assigned a static IP ending in ".1" to this machine.
+==> node1: This is very often used by the router and can cause the
+==> node1: network to not work properly. If the network doesn't work
+==> node1: properly, try changing this IP.
+==> node1: You assigned a static IP ending in ".1" to this machine.
+==> node1: This is very often used by the router and can cause the
+==> node1: network to not work properly. If the network doesn't work
+==> node1: properly, try changing this IP.
+==> node1: Clearing any previously set network interfaces...
+==> node1: Preparing network interfaces based on configuration...
+    node1: Adapter 1: nat
+    node1: Adapter 2: hostonly
+==> node1: Forwarding ports...
+    node1: 22 (guest) => 2222 (host) (adapter 1)
+==> node1: Running 'pre-boot' VM customizations...
+==> node1: Booting VM...
+==> node1: Waiting for machine to boot. This may take a few minutes...
+    node1: SSH address: 127.0.0.1:2222
+    node1: SSH username: vagrant
+    node1: SSH auth method: private key
+    node1: Warning: Connection reset. Retrying...
+    node1:
+    node1: Vagrant insecure key detected. Vagrant will automatically replace
+    node1: this with a newly generated keypair for better security.
+    node1:
+    node1: Inserting generated public key within guest...
+    node1: Removing insecure key from the guest if it's present...
+    node1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node1: Machine booted and ready!
+==> node1: Checking for guest additions in VM...
+==> node1: Setting hostname...
+==> node1: Configuring and enabling network interfaces...
+==> node1: Mounting shared folders...
+    node1: /vagrant => /Users/src/sd202211/molecule_testnode
+==> node1: Running provisioner: shell...
+    node1: Running: inline script
+    node1: Changing password for user root.
+    node1: passwd: all authentication tokens updated successfully.
+    node1: AlmaLinux 8 - BaseOS                            2.5 MB/s | 5.9 MB     00:02
+    node1: AlmaLinux 8 - AppStream                         8.7 MB/s |  10 MB     00:01
+    node1: AlmaLinux 8 - Extras                             21 kB/s |  18 kB     00:00
+    node1: Package zlib-1.2.11-18.el8_5.x86_64 is already installed.
+    node1: Package zlib-devel-1.2.11-18.el8_5.x86_64 is already installed.
+    node1: Package openssl-1:1.1.1k-7.el8_6.x86_64 is already installed.
+    node1: Package tar-2:1.30-5.el8.x86_64 is already installed.
+    node1: Dependencies resolved.
+    node1: ================================================================================
+    node1:  Package                Arch      Version                    Repository    Size
+    node1: ================================================================================
+    node1: Installing:
+    node1:  bzip2-devel            x86_64    1.0.6-26.el8               baseos       224 k
+    node1:  gcc                    x86_64    8.5.0-10.1.el8_6.alma      appstream     23 M
+    node1:  git                    x86_64    2.31.1-2.el8               appstream    160 k
+    node1:  libffi-devel           x86_64    3.1-23.el8                 baseos        28 k
+    node1:  make                   x86_64    1:4.2.1-11.el8             baseos       497 k
+    node1:  openssl-devel          x86_64    1:1.1.1k-7.el8_6           baseos       2.3 M
+    node1:  readline-devel         x86_64    7.0-10.el8                 baseos       204 k
+    node1:  sqlite-devel           x86_64    3.26.0-15.el8              baseos       164 k
+    node1:  sshpass                x86_64    1.09-4.el8                 appstream     29 k
+    node1:  xz-devel               x86_64    5.2.4-4.el8_6              baseos        62 k
+    node1: Installing dependencies:
+    node1:  annobin                x86_64    10.29-3.el8                appstream    115 k
+    node1:  binutils               x86_64    2.30-113.el8               baseos       5.8 M
+    node1:  emacs-filesystem       noarch    1:26.1-7.el8               baseos        69 k
+    node1:  git-core               x86_64    2.31.1-2.el8               appstream    4.7 M
+    node1:  git-core-doc           noarch    2.31.1-2.el8               appstream    2.6 M
+    node1:  glibc-devel            x86_64    2.28-189.5.el8_6           baseos        78 k
+    node1:  glibc-headers          x86_64    2.28-189.5.el8_6           baseos       482 k
+    node1:  kernel-headers         x86_64    4.18.0-372.19.1.el8_6      baseos       9.4 M
+    node1:  keyutils-libs-devel    x86_64    1.5.10-9.el8               baseos        47 k
+    node1:  krb5-devel             x86_64    1.18.2-14.el8              baseos       559 k
+    node1:  libcom_err-devel       x86_64    1.45.6-4.el8               baseos        37 k
+    node1:  libkadm5               x86_64    1.18.2-14.el8              baseos       186 k
+    node1:  libselinux-devel       x86_64    2.9-5.el8                  baseos       199 k
+    node1:  libsepol-devel         x86_64    2.9-3.el8                  baseos        86 k
+    node1:  libverto-devel         x86_64    0.3.0-5.el8                baseos        18 k
+    node1:  libxcrypt-devel        x86_64    4.1.1-6.el8                baseos        24 k
+    node1:  ncurses-c++-libs       x86_64    6.1-9.20180224.el8         baseos        57 k
+    node1:  ncurses-devel          x86_64    6.1-9.20180224.el8         baseos       528 k
+    node1:  pcre2-devel            x86_64    10.32-3.el8_6              baseos       604 k
+    node1:  pcre2-utf16            x86_64    10.32-3.el8_6              baseos       228 k
+    node1:  pcre2-utf32            x86_64    10.32-3.el8_6              baseos       219 k
+    node1:  perl-Error             noarch    1:0.17025-2.el8            appstream     46 k
+    node1:  perl-Git               noarch    2.31.1-2.el8               appstream     77 k
+    node1:  sqlite                 x86_64    3.26.0-15.el8              baseos       667 k
+    node1:
+    node1: Transaction Summary
+    node1: ================================================================================
+    node1: Install  34 Packages
+    node1:
+    node1: Total download size: 54 M
+    node1: Installed size: 141 M
+    node1: Downloading Packages:
+    node1: (1/34): emacs-filesystem-26.1-7.el8.noarch.rpm  795 kB/s |  69 kB     00:00
+    node1: (2/34): glibc-devel-2.28-189.5.el8_6.x86_64.rpm 1.9 MB/s |  78 kB     00:00
+    node1: (3/34): bzip2-devel-1.0.6-26.el8.x86_64.rpm     1.3 MB/s | 224 kB     00:00
+    node1: (4/34): glibc-headers-2.28-189.5.el8_6.x86_64.r 7.5 MB/s | 482 kB     00:00
+    node1: (5/34): keyutils-libs-devel-1.5.10-9.el8.x86_64 485 kB/s |  47 kB     00:00
+    node1: (6/34): krb5-devel-1.18.2-14.el8.x86_64.rpm     8.7 MB/s | 559 kB     00:00
+    node1: (7/34): libcom_err-devel-1.45.6-4.el8.x86_64.rp 925 kB/s |  37 kB     00:00
+    node1: (8/34): libffi-devel-3.1-23.el8.x86_64.rpm      921 kB/s |  28 kB     00:00
+    node1: (9/34): libkadm5-1.18.2-14.el8.x86_64.rpm       5.4 MB/s | 186 kB     00:00
+    node1: (10/34): libselinux-devel-2.9-5.el8.x86_64.rpm  5.0 MB/s | 199 kB     00:00
+    node1: (11/34): libsepol-devel-2.9-3.el8.x86_64.rpm    2.0 MB/s |  86 kB     00:00
+    node1: (12/34): libverto-devel-0.3.0-5.el8.x86_64.rpm  520 kB/s |  18 kB     00:00
+    node1: (13/34): libxcrypt-devel-4.1.1-6.el8.x86_64.rpm 1.0 MB/s |  24 kB     00:00
+    node1: (14/34): make-4.2.1-11.el8.x86_64.rpm            13 MB/s | 497 kB     00:00
+    node1: (15/34): ncurses-c++-libs-6.1-9.20180224.el8.x8 1.3 MB/s |  57 kB     00:00
+    node1: (16/34): ncurses-devel-6.1-9.20180224.el8.x86_6 7.8 MB/s | 528 kB     00:00
+    node1: (17/34): openssl-devel-1.1.1k-7.el8_6.x86_64.rp 4.6 MB/s | 2.3 MB     00:00
+    node1: (18/34): pcre2-devel-10.32-3.el8_6.x86_64.rpm   8.1 MB/s | 604 kB     00:00
+    node1: (19/34): pcre2-utf16-10.32-3.el8_6.x86_64.rpm   3.5 MB/s | 228 kB     00:00
+    node1: (20/34): pcre2-utf32-10.32-3.el8_6.x86_64.rpm   3.3 MB/s | 219 kB     00:00
+    node1: (21/34): readline-devel-7.0-10.el8.x86_64.rpm   3.7 MB/s | 204 kB     00:00
+    node1: (22/34): sqlite-3.26.0-15.el8.x86_64.rpm        8.2 MB/s | 667 kB     00:00
+    node1: (23/34): sqlite-devel-3.26.0-15.el8.x86_64.rpm  3.7 MB/s | 164 kB     00:00
+    node1: (24/34): xz-devel-5.2.4-4.el8_6.x86_64.rpm      2.7 MB/s |  62 kB     00:00
+    node1: (25/34): annobin-10.29-3.el8.x86_64.rpm         3.1 MB/s | 115 kB     00:00
+    node1: (26/34): gcc-8.5.0-10.1.el8_6.alma.x86_64.rpm   4.3 MB/s |  23 MB     00:05
+    node1: (27/34): kernel-headers-4.18.0-372.19.1.el8_6.x 1.3 MB/s | 9.4 MB     00:07
+    node1: (28/34): git-2.31.1-2.el8.x86_64.rpm            850 kB/s | 160 kB     00:00
+    node1: (29/34): binutils-2.30-113.el8.x86_64.rpm       792 kB/s | 5.8 MB     00:07
+    node1: (30/34): perl-Error-0.17025-2.el8.noarch.rpm    523 kB/s |  46 kB     00:00
+    node1: (31/34): perl-Git-2.31.1-2.el8.noarch.rpm       989 kB/s |  77 kB     00:00
+    node1: (32/34): sshpass-1.09-4.el8.x86_64.rpm          489 kB/s |  29 kB     00:00
+    node1: (33/34): git-core-doc-2.31.1-2.el8.noarch.rpm   1.6 MB/s | 2.6 MB     00:01
+    node1: (34/34): git-core-2.31.1-2.el8.x86_64.rpm       1.3 MB/s | 4.7 MB     00:03
+    node1: --------------------------------------------------------------------------------
+    node1: Total                                           4.4 MB/s |  54 MB     00:12
+    node1: Running transaction check
+    node1: Transaction check succeeded.
+    node1: Running transaction test
+    node1: Transaction test succeeded.
+    node1: Running transaction
+    node1:   Preparing        :                                                        1/1
+    node1:   Installing       : git-core-2.31.1-2.el8.x86_64                          1/34
+    node1:   Installing       : git-core-doc-2.31.1-2.el8.noarch                      2/34
+    node1:   Installing       : perl-Error-1:0.17025-2.el8.noarch                     3/34
+    node1:   Installing       : sqlite-3.26.0-15.el8.x86_64                           4/34
+    node1:   Installing       : pcre2-utf32-10.32-3.el8_6.x86_64                      5/34
+    node1:   Installing       : pcre2-utf16-10.32-3.el8_6.x86_64                      6/34
+    node1:   Installing       : pcre2-devel-10.32-3.el8_6.x86_64                      7/34
+    node1:   Installing       : ncurses-c++-libs-6.1-9.20180224.el8.x86_64            8/34
+    node1:   Installing       : ncurses-devel-6.1-9.20180224.el8.x86_64               9/34
+    node1:   Installing       : libverto-devel-0.3.0-5.el8.x86_64                    10/34
+    node1:   Installing       : libsepol-devel-2.9-3.el8.x86_64                      11/34
+    node1:   Installing       : libselinux-devel-2.9-5.el8.x86_64                    12/34
+    node1:   Installing       : libkadm5-1.18.2-14.el8.x86_64                        13/34
+    node1:   Installing       : libcom_err-devel-1.45.6-4.el8.x86_64                 14/34
+    node1:   Installing       : keyutils-libs-devel-1.5.10-9.el8.x86_64              15/34
+    node1:   Installing       : krb5-devel-1.18.2-14.el8.x86_64                      16/34
+    node1:   Installing       : kernel-headers-4.18.0-372.19.1.el8_6.x86_64          17/34
+    node1:   Running scriptlet: glibc-headers-2.28-189.5.el8_6.x86_64                18/34
+    node1:   Installing       : glibc-headers-2.28-189.5.el8_6.x86_64                18/34
+    node1:   Installing       : libxcrypt-devel-4.1.1-6.el8.x86_64                   19/34
+    node1:   Installing       : glibc-devel-2.28-189.5.el8_6.x86_64                  20/34
+    node1:   Running scriptlet: glibc-devel-2.28-189.5.el8_6.x86_64                  20/34
+    node1:   Installing       : emacs-filesystem-1:26.1-7.el8.noarch                 21/34
+    node1:   Installing       : perl-Git-2.31.1-2.el8.noarch                         22/34
+    node1:   Installing       : git-2.31.1-2.el8.x86_64                              23/34
+    node1:   Installing       : binutils-2.30-113.el8.x86_64                         24/34
+    node1:   Running scriptlet: binutils-2.30-113.el8.x86_64                         24/34
+    node1:   Installing       : gcc-8.5.0-10.1.el8_6.alma.x86_64                     25/34
+    node1:   Running scriptlet: gcc-8.5.0-10.1.el8_6.alma.x86_64                     25/34
+    node1:   Installing       : annobin-10.29-3.el8.x86_64                           26/34
+    node1:   Installing       : openssl-devel-1:1.1.1k-7.el8_6.x86_64                27/34
+    node1:   Installing       : readline-devel-7.0-10.el8.x86_64                     28/34
+    node1:   Running scriptlet: readline-devel-7.0-10.el8.x86_64                     28/34
+    node1: install-info: No such file or directory for /usr/share/info/history.info
+    node1:
+    node1:   Installing       : sqlite-devel-3.26.0-15.el8.x86_64                    29/34
+    node1:   Installing       : sshpass-1.09-4.el8.x86_64                            30/34
+    node1:   Installing       : xz-devel-5.2.4-4.el8_6.x86_64                        31/34
+    node1:   Installing       : make-1:4.2.1-11.el8.x86_64                           32/34
+    node1:   Running scriptlet: make-1:4.2.1-11.el8.x86_64                           32/34
+    node1:   Installing       : libffi-devel-3.1-23.el8.x86_64                       33/34
+    node1:   Running scriptlet: libffi-devel-3.1-23.el8.x86_64                       33/34
+    node1:   Installing       : bzip2-devel-1.0.6-26.el8.x86_64                      34/34
+    node1:   Running scriptlet: bzip2-devel-1.0.6-26.el8.x86_64                      34/34
+    node1:   Verifying        : binutils-2.30-113.el8.x86_64                          1/34
+    node1:   Verifying        : bzip2-devel-1.0.6-26.el8.x86_64                       2/34
+    node1:   Verifying        : emacs-filesystem-1:26.1-7.el8.noarch                  3/34
+    node1:   Verifying        : glibc-devel-2.28-189.5.el8_6.x86_64                   4/34
+    node1:   Verifying        : glibc-headers-2.28-189.5.el8_6.x86_64                 5/34
+    node1:   Verifying        : kernel-headers-4.18.0-372.19.1.el8_6.x86_64           6/34
+    node1:   Verifying        : keyutils-libs-devel-1.5.10-9.el8.x86_64               7/34
+    node1:   Verifying        : krb5-devel-1.18.2-14.el8.x86_64                       8/34
+    node1:   Verifying        : libcom_err-devel-1.45.6-4.el8.x86_64                  9/34
+    node1:   Verifying        : libffi-devel-3.1-23.el8.x86_64                       10/34
+    node1:   Verifying        : libkadm5-1.18.2-14.el8.x86_64                        11/34
+    node1:   Verifying        : libselinux-devel-2.9-5.el8.x86_64                    12/34
+    node1:   Verifying        : libsepol-devel-2.9-3.el8.x86_64                      13/34
+    node1:   Verifying        : libverto-devel-0.3.0-5.el8.x86_64                    14/34
+    node1:   Verifying        : libxcrypt-devel-4.1.1-6.el8.x86_64                   15/34
+    node1:   Verifying        : make-1:4.2.1-11.el8.x86_64                           16/34
+    node1:   Verifying        : ncurses-c++-libs-6.1-9.20180224.el8.x86_64           17/34
+    node1:   Verifying        : ncurses-devel-6.1-9.20180224.el8.x86_64              18/34
+    node1:   Verifying        : openssl-devel-1:1.1.1k-7.el8_6.x86_64                19/34
+    node1:   Verifying        : pcre2-devel-10.32-3.el8_6.x86_64                     20/34
+    node1:   Verifying        : pcre2-utf16-10.32-3.el8_6.x86_64                     21/34
+    node1:   Verifying        : pcre2-utf32-10.32-3.el8_6.x86_64                     22/34
+    node1:   Verifying        : readline-devel-7.0-10.el8.x86_64                     23/34
+    node1:   Verifying        : sqlite-3.26.0-15.el8.x86_64                          24/34
+    node1:   Verifying        : sqlite-devel-3.26.0-15.el8.x86_64                    25/34
+    node1:   Verifying        : xz-devel-5.2.4-4.el8_6.x86_64                        26/34
+    node1:   Verifying        : annobin-10.29-3.el8.x86_64                           27/34
+    node1:   Verifying        : gcc-8.5.0-10.1.el8_6.alma.x86_64                     28/34
+    node1:   Verifying        : git-2.31.1-2.el8.x86_64                              29/34
+    node1:   Verifying        : git-core-2.31.1-2.el8.x86_64                         30/34
+    node1:   Verifying        : git-core-doc-2.31.1-2.el8.noarch                     31/34
+    node1:   Verifying        : perl-Error-1:0.17025-2.el8.noarch                    32/34
+    node1:   Verifying        : perl-Git-2.31.1-2.el8.noarch                         33/34
+    node1:   Verifying        : sshpass-1.09-4.el8.x86_64                            34/34
+    node1:
+    node1: Installed:
+    node1:   annobin-10.29-3.el8.x86_64
+    node1:   binutils-2.30-113.el8.x86_64
+    node1:   bzip2-devel-1.0.6-26.el8.x86_64
+    node1:   emacs-filesystem-1:26.1-7.el8.noarch
+    node1:   gcc-8.5.0-10.1.el8_6.alma.x86_64
+    node1:   git-2.31.1-2.el8.x86_64
+    node1:   git-core-2.31.1-2.el8.x86_64
+    node1:   git-core-doc-2.31.1-2.el8.noarch
+    node1:   glibc-devel-2.28-189.5.el8_6.x86_64
+    node1:   glibc-headers-2.28-189.5.el8_6.x86_64
+    node1:   kernel-headers-4.18.0-372.19.1.el8_6.x86_64
+    node1:   keyutils-libs-devel-1.5.10-9.el8.x86_64
+    node1:   krb5-devel-1.18.2-14.el8.x86_64
+    node1:   libcom_err-devel-1.45.6-4.el8.x86_64
+    node1:   libffi-devel-3.1-23.el8.x86_64
+    node1:   libkadm5-1.18.2-14.el8.x86_64
+    node1:   libselinux-devel-2.9-5.el8.x86_64
+    node1:   libsepol-devel-2.9-3.el8.x86_64
+    node1:   libverto-devel-0.3.0-5.el8.x86_64
+    node1:   libxcrypt-devel-4.1.1-6.el8.x86_64
+    node1:   make-1:4.2.1-11.el8.x86_64
+    node1:   ncurses-c++-libs-6.1-9.20180224.el8.x86_64
+    node1:   ncurses-devel-6.1-9.20180224.el8.x86_64
+    node1:   openssl-devel-1:1.1.1k-7.el8_6.x86_64
+    node1:   pcre2-devel-10.32-3.el8_6.x86_64
+    node1:   pcre2-utf16-10.32-3.el8_6.x86_64
+    node1:   pcre2-utf32-10.32-3.el8_6.x86_64
+    node1:   perl-Error-1:0.17025-2.el8.noarch
+    node1:   perl-Git-2.31.1-2.el8.noarch
+    node1:   readline-devel-7.0-10.el8.x86_64
+    node1:   sqlite-3.26.0-15.el8.x86_64
+    node1:   sqlite-devel-3.26.0-15.el8.x86_64
+    node1:   sshpass-1.09-4.el8.x86_64
+    node1:   xz-devel-5.2.4-4.el8_6.x86_64
+    node1:
+    node1: Complete!
+    node1: Docker CE Stable - x86_64                       152 kB/s |  26 kB     00:00
+    node1: Dependencies resolved.
+    node1: ========================================================================================================
+    node1:  Package                        Arch    Version                                  Repository         Size
+    node1: ========================================================================================================
+    node1: Installing:
+    node1:  containerd.io                  x86_64  1.6.8-3.1.el8                            docker-ce-stable   33 M
+    node1:  docker-ce                      x86_64  3:20.10.17-3.el8                         docker-ce-stable   22 M
+    node1:  docker-ce-cli                  x86_64  1:20.10.17-3.el8                         docker-ce-stable   29 M
+    node1: Installing dependencies:
+    node1:  checkpolicy                    x86_64  2.9-1.el8                                baseos            347 k
+    node1:  container-selinux              noarch  2:2.188.0-1.module_el8.6.0+3070+1510fbd1 appstream          58 k
+    node1:  docker-ce-rootless-extras      x86_64  20.10.17-3.el8                           docker-ce-stable  4.7 M
+    node1:  fuse-common                    x86_64  3.3.0-15.el8                             baseos             21 k
+    node1:  fuse-overlayfs                 x86_64  1.9-1.module_el8.6.0+3070+1510fbd1       appstream          72 k
+    node1:  fuse3                          x86_64  3.3.0-15.el8                             baseos             53 k
+    node1:  fuse3-libs                     x86_64  3.3.0-15.el8                             baseos             94 k
+    node1:  libcgroup                      x86_64  0.41-19.el8                              baseos             69 k
+    node1:  libslirp                       x86_64  4.4.0-1.module_el8.6.0+2878+e681bc44     appstream          69 k
+    node1:  policycoreutils-python-utils   noarch  2.9-19.el8                               baseos            252 k
+    node1:  python3-audit                  x86_64  3.0.7-2.el8.2                            baseos             86 k
+    node1:  python3-libsemanage            x86_64  2.9-8.el8                                baseos            127 k
+    node1:  python3-policycoreutils        noarch  2.9-19.el8                               baseos            2.2 M
+    node1:  python3-setools                x86_64  4.3.0-3.el8                              baseos            623 k
+    node1:  slirp4netns                    x86_64  1.2.0-2.module_el8.6.0+3070+1510fbd1     appstream          53 k
+    node1: Installing weak dependencies:
+    node1:  docker-scan-plugin             x86_64  0.17.0-3.el8                             docker-ce-stable  3.8 M
+    node1: Enabling module streams:
+    node1:  container-tools                        rhel8
+    node1:
+    node1: Transaction Summary
+    node1: ========================================================================================================
+    node1: Install  19 Packages
+    node1:
+    node1: Total download size: 97 M
+    node1: Installed size: 400 M
+    node1: Downloading Packages:
+    node1: (1/19): fuse-common-3.3.0-15.el8.x86_64.rpm     423 kB/s |  21 kB     00:00
+    node1: (2/19): fuse3-3.3.0-15.el8.x86_64.rpm           818 kB/s |  53 kB     00:00
+    node1: (3/19): fuse3-libs-3.3.0-15.el8.x86_64.rpm      1.7 MB/s |  94 kB     00:00
+    node1: (4/19): libcgroup-0.41-19.el8.x86_64.rpm        583 kB/s |  69 kB     00:00
+    node1: (5/19): checkpolicy-2.9-1.el8.x86_64.rpm        714 kB/s | 347 kB     00:00
+    node1: (6/19): policycoreutils-python-utils-2.9-19.el8 638 kB/s | 252 kB     00:00
+    node1: (7/19): python3-audit-3.0.7-2.el8.2.x86_64.rpm  143 kB/s |  86 kB     00:00
+    node1: (8/19): python3-libsemanage-2.9-8.el8.x86_64.rp 403 kB/s | 127 kB     00:00
+    node1: (9/19): python3-policycoreutils-2.9-19.el8.noar 5.0 MB/s | 2.2 MB     00:00
+    node1: (10/19): container-selinux-2.188.0-1.module_el8 275 kB/s |  58 kB     00:00
+    node1: (11/19): python3-setools-4.3.0-3.el8.x86_64.rpm 1.9 MB/s | 623 kB     00:00
+    node1: (12/19): fuse-overlayfs-1.9-1.module_el8.6.0+30 293 kB/s |  72 kB     00:00
+    node1: (13/19): slirp4netns-1.2.0-2.module_el8.6.0+307 512 kB/s |  53 kB     00:00
+    node1: (14/19): libslirp-4.4.0-1.module_el8.6.0+2878+e 299 kB/s |  69 kB     00:00
+    node1: (15/19): docker-ce-20.10.17-3.el8.x86_64.rpm     14 MB/s |  22 MB     00:01
+    node1: (16/19): docker-ce-cli-20.10.17-3.el8.x86_64.rp  16 MB/s |  29 MB     00:01
+    node1: (17/19): docker-ce-rootless-extras-20.10.17-3.e 7.2 MB/s | 4.7 MB     00:00
+    node1: (18/19): docker-scan-plugin-0.17.0-3.el8.x86_64  12 MB/s | 3.8 MB     00:00
+    node1: (19/19): containerd.io-1.6.8-3.1.el8.x86_64.rpm  12 MB/s |  33 MB     00:02
+    node1: --------------------------------------------------------------------------------
+    node1: Total                                            18 MB/s |  97 MB     00:05
+    node1: Docker CE Stable - x86_64                        27 kB/s | 1.6 kB     00:00
+    node1: Importing GPG key 0x621E9F35:
+    node1:  Userid     : "Docker Release (CE rpm) <docker@docker.com>"
+    node1:  Fingerprint: 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35
+    node1:  From       : https://download.docker.com/linux/centos/gpg
+    node1: Key imported successfully
+    node1: Running transaction check
+    node1: Transaction check succeeded.
+    node1: Running transaction test
+    node1: Transaction test succeeded.
+    node1: Running transaction
+    node1:   Preparing        :                                                        1/1
+    node1:   Installing       : docker-scan-plugin-0.17.0-3.el8.x86_64                1/19
+    node1:   Running scriptlet: docker-scan-plugin-0.17.0-3.el8.x86_64                1/19
+    node1:   Installing       : docker-ce-cli-1:20.10.17-3.el8.x86_64                 2/19
+    node1:   Running scriptlet: docker-ce-cli-1:20.10.17-3.el8.x86_64                 2/19
+    node1:   Installing       : fuse3-libs-3.3.0-15.el8.x86_64                        3/19
+    node1:   Running scriptlet: fuse3-libs-3.3.0-15.el8.x86_64                        3/19
+    node1:   Installing       : libslirp-4.4.0-1.module_el8.6.0+2878+e681bc44.x86_    4/19
+    node1:   Installing       : slirp4netns-1.2.0-2.module_el8.6.0+3070+1510fbd1.x    5/19
+    node1:   Installing       : python3-setools-4.3.0-3.el8.x86_64                    6/19
+    node1:   Installing       : python3-libsemanage-2.9-8.el8.x86_64                  7/19
+    node1:   Installing       : python3-audit-3.0.7-2.el8.2.x86_64                    8/19
+    node1:   Running scriptlet: libcgroup-0.41-19.el8.x86_64                          9/19
+    node1:   Installing       : libcgroup-0.41-19.el8.x86_64                          9/19
+    node1:   Running scriptlet: libcgroup-0.41-19.el8.x86_64                          9/19
+    node1:   Installing       : fuse-common-3.3.0-15.el8.x86_64                      10/19
+    node1:   Installing       : fuse3-3.3.0-15.el8.x86_64                            11/19
+    node1:   Installing       : fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.   12/19
+    node1:   Running scriptlet: fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.   12/19
+    node1:   Installing       : checkpolicy-2.9-1.el8.x86_64                         13/19
+    node1:   Installing       : python3-policycoreutils-2.9-19.el8.noarch            14/19
+    node1:   Installing       : policycoreutils-python-utils-2.9-19.el8.noarch       15/19
+    node1:   Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+   16/19
+    node1:   Installing       : container-selinux-2:2.188.0-1.module_el8.6.0+3070+   16/19
+    node1:   Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+   16/19
+    node1:   Installing       : containerd.io-1.6.8-3.1.el8.x86_64                   17/19
+    node1:   Running scriptlet: containerd.io-1.6.8-3.1.el8.x86_64                   17/19
+    node1:   Installing       : docker-ce-rootless-extras-20.10.17-3.el8.x86_64      18/19
+    node1:   Running scriptlet: docker-ce-rootless-extras-20.10.17-3.el8.x86_64      18/19
+    node1:   Installing       : docker-ce-3:20.10.17-3.el8.x86_64                    19/19
+    node1:   Running scriptlet: docker-ce-3:20.10.17-3.el8.x86_64                    19/19
+    node1:   Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+   19/19
+    node1:   Running scriptlet: docker-ce-3:20.10.17-3.el8.x86_64                    19/19
+    node1:   Verifying        : checkpolicy-2.9-1.el8.x86_64                          1/19
+    node1:   Verifying        : fuse-common-3.3.0-15.el8.x86_64                       2/19
+    node1:   Verifying        : fuse3-3.3.0-15.el8.x86_64                             3/19
+    node1:   Verifying        : fuse3-libs-3.3.0-15.el8.x86_64                        4/19
+    node1:   Verifying        : libcgroup-0.41-19.el8.x86_64                          5/19
+    node1:   Verifying        : policycoreutils-python-utils-2.9-19.el8.noarch        6/19
+    node1:   Verifying        : python3-audit-3.0.7-2.el8.2.x86_64                    7/19
+    node1:   Verifying        : python3-libsemanage-2.9-8.el8.x86_64                  8/19
+    node1:   Verifying        : python3-policycoreutils-2.9-19.el8.noarch             9/19
+    node1:   Verifying        : python3-setools-4.3.0-3.el8.x86_64                   10/19
+    node1:   Verifying        : container-selinux-2:2.188.0-1.module_el8.6.0+3070+   11/19
+    node1:   Verifying        : fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.   12/19
+    node1:   Verifying        : libslirp-4.4.0-1.module_el8.6.0+2878+e681bc44.x86_   13/19
+    node1:   Verifying        : slirp4netns-1.2.0-2.module_el8.6.0+3070+1510fbd1.x   14/19
+    node1:   Verifying        : containerd.io-1.6.8-3.1.el8.x86_64                   15/19
+    node1:   Verifying        : docker-ce-3:20.10.17-3.el8.x86_64                    16/19
+    node1:   Verifying        : docker-ce-cli-1:20.10.17-3.el8.x86_64                17/19
+    node1:   Verifying        : docker-ce-rootless-extras-20.10.17-3.el8.x86_64      18/19
+    node1:   Verifying        : docker-scan-plugin-0.17.0-3.el8.x86_64               19/19
+    node1:
+    node1: Installed:
+    node1:   checkpolicy-2.9-1.el8.x86_64
+    node1:   container-selinux-2:2.188.0-1.module_el8.6.0+3070+1510fbd1.noarch
+    node1:   containerd.io-1.6.8-3.1.el8.x86_64
+    node1:   docker-ce-3:20.10.17-3.el8.x86_64
+    node1:   docker-ce-cli-1:20.10.17-3.el8.x86_64
+    node1:   docker-ce-rootless-extras-20.10.17-3.el8.x86_64
+    node1:   docker-scan-plugin-0.17.0-3.el8.x86_64
+    node1:   fuse-common-3.3.0-15.el8.x86_64
+    node1:   fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.x86_64
+    node1:   fuse3-3.3.0-15.el8.x86_64
+    node1:   fuse3-libs-3.3.0-15.el8.x86_64
+    node1:   libcgroup-0.41-19.el8.x86_64
+    node1:   libslirp-4.4.0-1.module_el8.6.0+2878+e681bc44.x86_64
+    node1:   policycoreutils-python-utils-2.9-19.el8.noarch
+    node1:   python3-audit-3.0.7-2.el8.2.x86_64
+    node1:   python3-libsemanage-2.9-8.el8.x86_64
+    node1:   python3-policycoreutils-2.9-19.el8.noarch
+    node1:   python3-setools-4.3.0-3.el8.x86_64
+    node1:   slirp4netns-1.2.0-2.module_el8.6.0+3070+1510fbd1.x86_64
+    node1:
+    node1: Complete!
+    node1: Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+    node1:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    node1:                                  Dload  Upload   Total   Spent    Left  Speed
+100   270  100   270    0     0    247      0  0:00:01  0:00:01 --:--:--   247
+    node1: Cloning into '/root/.pyenv'...
+    node1: Cloning into '/root/.pyenv/plugins/pyenv-doctor'...
+    node1: Cloning into '/root/.pyenv/plugins/pyenv-installer'...
+    node1: Cloning into '/root/.pyenv/plugins/pyenv-update'...
+    node1: Cloning into '/root/.pyenv/plugins/pyenv-virtualenv'...
+    node1: Cloning into '/root/.pyenv/plugins/pyenv-which-ext'...
+    node1:
+    node1: WARNING: seems you still have not added 'pyenv' to the load path.
+    node1:
+    node1: # Load pyenv automatically by appending
+    node1: # the following to
+    node1: ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+    node1: and ~/.bashrc (for interactive shells) :
+    node1:
+    node1: export PYENV_ROOT="$HOME/.pyenv"
+    node1: command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    node1: eval "$(pyenv init -)"
+    node1:
+    node1: # Restart your shell for the changes to take effect.
+    node1:
+    node1: # Load pyenv-virtualenv automatically by adding
+    node1: # the following to ~/.bashrc:
+    node1:
+    node1: eval "$(pyenv virtualenv-init -)"
+    node1:
+    node1: Downloading Python-3.10.6.tar.xz...
+    node1: -> https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tar.xz
+    node1: Installing Python-3.10.6...
+    node1: Installed Python-3.10.6 to /root/.pyenv/versions/3.10.6
+    node1:
+    node1: Collecting pipenv
+    node1:   Downloading pipenv-2022.8.24-py2.py3-none-any.whl (3.4 MB)
+    node1:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 56.0 MB/s eta 0:00:00
+    node1: Collecting selinux
+    node1:   Downloading selinux-0.2.1-py2.py3-none-any.whl (4.3 kB)
+    node1: Collecting certifi
+    node1:   Downloading certifi-2022.6.15-py3-none-any.whl (160 kB)
+    node1:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.2/160.2 kB 5.7 MB/s eta 0:00:00
+    node1: Collecting virtualenv-clone>=0.2.5
+    node1:   Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)
+    node1: Requirement already satisfied: setuptools>=36.2.1 in ./.pyenv/versions/3.10.6/lib/python3.10/site-packages (from pipenv) (63.2.0)
+    node1: Collecting virtualenv
+    node1:   Downloading virtualenv-20.16.3-py2.py3-none-any.whl (8.8 MB)
+    node1:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 63.7 MB/s eta 0:00:00
+    node1: Collecting distro>=1.3.0
+    node1:   Downloading distro-1.7.0-py3-none-any.whl (20 kB)
+    node1: Collecting distlib<1,>=0.3.5
+    node1:   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
+    node1:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.5/468.5 kB 72.7 MB/s eta 0:00:00
+    node1: Collecting filelock<4,>=3.4.1
+    node1:   Downloading filelock-3.8.0-py3-none-any.whl (10 kB)
+    node1: Collecting platformdirs<3,>=2.4
+    node1:   Downloading platformdirs-2.5.2-py3-none-any.whl (14 kB)
+    node1: Installing collected packages: distlib, virtualenv-clone, platformdirs, filelock, distro, certifi, virtualenv, selinux, pipenv
+    node1: Successfully installed certifi-2022.6.15 distlib-0.3.6 distro-1.7.0 filelock-3.8.0 pipenv-2022.8.24 platformdirs-2.5.2 selinux-0.2.1 virtualenv-20.16.3 virtualenv-clone-0.5.7
+    node1: WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+    node1:
+    node1: [notice] A new release of pip available: 22.2.1 -> 22.2.2
+    node1: [notice] To update, run: pip install --upgrade pip
+    node1: Requirement already satisfied: pip in ./.pyenv/versions/3.10.6/lib/python3.10/site-packages (22.2.1)
+    node1: Collecting pip
+    node1:   Downloading pip-22.2.2-py3-none-any.whl (2.0 MB)
+    node1:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 53.1 MB/s eta 0:00:00
+    node1: Installing collected packages: pip
+    node1:   Attempting uninstall: pip
+    node1:     Found existing installation: pip 22.2.1
+    node1:     Uninstalling pip-22.2.1:
+    node1:       Successfully uninstalled pip-22.2.1
+    node1: Successfully installed pip-22.2.2
+    node1: WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+==> node2: Importing base box 'almalinux/8'...
+==> node2: Matching MAC address for NAT networking...
+==> node2: Setting the name of the VM: molecule_testnode_node2_1661857955116_23738
+==> node2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> node2: Clearing any previously set network interfaces...
+==> node2: Preparing network interfaces based on configuration...
+    node2: Adapter 1: nat
+    node2: Adapter 2: hostonly
+==> node2: Forwarding ports...
+    node2: 22 (guest) => 2200 (host) (adapter 1)
+==> node2: Running 'pre-boot' VM customizations...
+==> node2: Booting VM...
+==> node2: Waiting for machine to boot. This may take a few minutes...
+    node2: SSH address: 127.0.0.1:2200
+    node2: SSH username: vagrant
+    node2: SSH auth method: private key
+    node2:
+    node2: Vagrant insecure key detected. Vagrant will automatically replace
+    node2: this with a newly generated keypair for better security.
+    node2:
+    node2: Inserting generated public key within guest...
+    node2: Removing insecure key from the guest if it's present...
+    node2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node2: Machine booted and ready!
+==> node2: Checking for guest additions in VM...
+==> node2: Setting hostname...
+==> node2: Configuring and enabling network interfaces...
+==> node2: Mounting shared folders...
+    node2: /vagrant => /Users/src/sd202211/molecule_testnode
+==> node2: Running provisioner: shell...
+    node2: Running: inline script
+    node2: Changing password for user root.
+    node2: passwd: all authentication tokens updated successfully.
+    node2: AlmaLinux 8 - BaseOS                            5.3 MB/s | 5.9 MB     00:01
+    node2: AlmaLinux 8 - AppStream                         4.9 MB/s |  10 MB     00:02
+    node2: AlmaLinux 8 - Extras                             22 kB/s |  18 kB     00:00
+    node2: Package zlib-1.2.11-18.el8_5.x86_64 is already installed.
+    node2: Package zlib-devel-1.2.11-18.el8_5.x86_64 is already installed.
+    node2: Package openssl-1:1.1.1k-7.el8_6.x86_64 is already installed.
+    node2: Package tar-2:1.30-5.el8.x86_64 is already installed.
+    node2: Dependencies resolved.
+    node2: ================================================================================
+    node2:  Package                Arch      Version                    Repository    Size
+    node2: ================================================================================
+    node2: Installing:
+    node2:  bzip2-devel            x86_64    1.0.6-26.el8               baseos       224 k
+    node2:  gcc                    x86_64    8.5.0-10.1.el8_6.alma      appstream     23 M
+    node2:  git                    x86_64    2.31.1-2.el8               appstream    160 k
+    node2:  libffi-devel           x86_64    3.1-23.el8                 baseos        28 k
+    node2:  make                   x86_64    1:4.2.1-11.el8             baseos       497 k
+    node2:  openssl-devel          x86_64    1:1.1.1k-7.el8_6           baseos       2.3 M
+    node2:  readline-devel         x86_64    7.0-10.el8                 baseos       204 k
+    node2:  sqlite-devel           x86_64    3.26.0-15.el8              baseos       164 k
+    node2:  sshpass                x86_64    1.09-4.el8                 appstream     29 k
+    node2:  xz-devel               x86_64    5.2.4-4.el8_6              baseos        62 k
+    node2: Installing dependencies:
+    node2:  annobin                x86_64    10.29-3.el8                appstream    115 k
+    node2:  binutils               x86_64    2.30-113.el8               baseos       5.8 M
+    node2:  emacs-filesystem       noarch    1:26.1-7.el8               baseos        69 k
+    node2:  git-core               x86_64    2.31.1-2.el8               appstream    4.7 M
+    node2:  git-core-doc           noarch    2.31.1-2.el8               appstream    2.6 M
+    node2:  glibc-devel            x86_64    2.28-189.5.el8_6           baseos        78 k
+    node2:  glibc-headers          x86_64    2.28-189.5.el8_6           baseos       482 k
+    node2:  kernel-headers         x86_64    4.18.0-372.19.1.el8_6      baseos       9.4 M
+    node2:  keyutils-libs-devel    x86_64    1.5.10-9.el8               baseos        47 k
+    node2:  krb5-devel             x86_64    1.18.2-14.el8              baseos       559 k
+    node2:  libcom_err-devel       x86_64    1.45.6-4.el8               baseos        37 k
+    node2:  libkadm5               x86_64    1.18.2-14.el8              baseos       186 k
+    node2:  libselinux-devel       x86_64    2.9-5.el8                  baseos       199 k
+    node2:  libsepol-devel         x86_64    2.9-3.el8                  baseos        86 k
+    node2:  libverto-devel         x86_64    0.3.0-5.el8                baseos        18 k
+    node2:  libxcrypt-devel        x86_64    4.1.1-6.el8                baseos        24 k
+    node2:  ncurses-c++-libs       x86_64    6.1-9.20180224.el8         baseos        57 k
+    node2:  ncurses-devel          x86_64    6.1-9.20180224.el8         baseos       528 k
+    node2:  pcre2-devel            x86_64    10.32-3.el8_6              baseos       604 k
+    node2:  pcre2-utf16            x86_64    10.32-3.el8_6              baseos       228 k
+    node2:  pcre2-utf32            x86_64    10.32-3.el8_6              baseos       219 k
+    node2:  perl-Error             noarch    1:0.17025-2.el8            appstream     46 k
+    node2:  perl-Git               noarch    2.31.1-2.el8               appstream     77 k
+    node2:  sqlite                 x86_64    3.26.0-15.el8              baseos       667 k
+    node2:
+    node2: Transaction Summary
+    node2: ================================================================================
+    node2: Install  34 Packages
+    node2:
+    node2: Total download size: 54 M
+    node2: Installed size: 141 M
+    node2: Downloading Packages:
+    node2: (1/34): emacs-filesystem-26.1-7.el8.noarch.rpm  800 kB/s |  69 kB     00:00
+    node2: (2/34): bzip2-devel-1.0.6-26.el8.x86_64.rpm     1.7 MB/s | 224 kB     00:00
+    node2: (3/34): glibc-devel-2.28-189.5.el8_6.x86_64.rpm 1.7 MB/s |  78 kB     00:00
+    node2: (4/34): glibc-headers-2.28-189.5.el8_6.x86_64.r 4.5 MB/s | 482 kB     00:00
+    node2: (5/34): keyutils-libs-devel-1.5.10-9.el8.x86_64 2.0 MB/s |  47 kB     00:00
+    node2: (6/34): krb5-devel-1.18.2-14.el8.x86_64.rpm     4.4 MB/s | 559 kB     00:00
+    node2: (7/34): libcom_err-devel-1.45.6-4.el8.x86_64.rp 1.5 MB/s |  37 kB     00:00
+    node2: (8/34): libffi-devel-3.1-23.el8.x86_64.rpm      1.3 MB/s |  28 kB     00:00
+    node2: (9/34): libkadm5-1.18.2-14.el8.x86_64.rpm       4.6 MB/s | 186 kB     00:00
+    node2: (10/34): libselinux-devel-2.9-5.el8.x86_64.rpm  3.4 MB/s | 199 kB     00:00
+    node2: (11/34): libsepol-devel-2.9-3.el8.x86_64.rpm    4.0 MB/s |  86 kB     00:00
+    node2: (12/34): libverto-devel-0.3.0-5.el8.x86_64.rpm  883 kB/s |  18 kB     00:00
+    node2: (13/34): libxcrypt-devel-4.1.1-6.el8.x86_64.rpm 1.2 MB/s |  24 kB     00:00
+    node2: (14/34): make-4.2.1-11.el8.x86_64.rpm           4.2 MB/s | 497 kB     00:00
+    node2: (15/34): ncurses-c++-libs-6.1-9.20180224.el8.x8 2.6 MB/s |  57 kB     00:00
+    node2: (16/34): ncurses-devel-6.1-9.20180224.el8.x86_6 4.5 MB/s | 528 kB     00:00
+    node2: (17/34): kernel-headers-4.18.0-372.19.1.el8_6.x  12 MB/s | 9.4 MB     00:00
+    node2: (18/34): pcre2-devel-10.32-3.el8_6.x86_64.rpm    13 MB/s | 604 kB     00:00
+    node2: (19/34): pcre2-utf16-10.32-3.el8_6.x86_64.rpm   9.4 MB/s | 228 kB     00:00
+    node2: (20/34): pcre2-utf32-10.32-3.el8_6.x86_64.rpm   9.1 MB/s | 219 kB     00:00
+    node2: (21/34): readline-devel-7.0-10.el8.x86_64.rpm   8.2 MB/s | 204 kB     00:00
+    node2: (22/34): sqlite-3.26.0-15.el8.x86_64.rpm         15 MB/s | 667 kB     00:00
+    node2: (23/34): sqlite-devel-3.26.0-15.el8.x86_64.rpm  6.9 MB/s | 164 kB     00:00
+    node2: (24/34): xz-devel-5.2.4-4.el8_6.x86_64.rpm      2.9 MB/s |  62 kB     00:00
+    node2: (25/34): annobin-10.29-3.el8.x86_64.rpm         5.3 MB/s | 115 kB     00:00
+    node2: (26/34): openssl-devel-1.1.1k-7.el8_6.x86_64.rp 5.2 MB/s | 2.3 MB     00:00
+    node2: (27/34): binutils-2.30-113.el8.x86_64.rpm       4.4 MB/s | 5.8 MB     00:01
+    node2: (28/34): git-2.31.1-2.el8.x86_64.rpm            2.7 MB/s | 160 kB     00:00
+    node2: (29/34): git-core-doc-2.31.1-2.el8.noarch.rpm   4.5 MB/s | 2.6 MB     00:00
+    node2: (30/34): perl-Error-0.17025-2.el8.noarch.rpm    2.2 MB/s |  46 kB     00:00
+    node2: (31/34): perl-Git-2.31.1-2.el8.noarch.rpm       1.8 MB/s |  77 kB     00:00
+    node2: (32/34): sshpass-1.09-4.el8.x86_64.rpm          1.2 MB/s |  29 kB     00:00
+    node2: (33/34): gcc-8.5.0-10.1.el8_6.alma.x86_64.rpm    23 MB/s |  23 MB     00:01
+    node2: (34/34): git-core-2.31.1-2.el8.x86_64.rpm       3.5 MB/s | 4.7 MB     00:01
+    node2: --------------------------------------------------------------------------------
+    node2: Total                                            13 MB/s |  54 MB     00:04
+    node2: Running transaction check
+    node2: Transaction check succeeded.
+    node2: Running transaction test
+    node2: Transaction test succeeded.
+    node2: Running transaction
+    node2:   Preparing        :                                                        1/1
+    node2:   Installing       : git-core-2.31.1-2.el8.x86_64                          1/34
+    node2:   Installing       : git-core-doc-2.31.1-2.el8.noarch                      2/34
+    node2:   Installing       : perl-Error-1:0.17025-2.el8.noarch                     3/34
+    node2:   Installing       : sqlite-3.26.0-15.el8.x86_64                           4/34
+    node2:   Installing       : pcre2-utf32-10.32-3.el8_6.x86_64                      5/34
+    node2:   Installing       : pcre2-utf16-10.32-3.el8_6.x86_64                      6/34
+    node2:   Installing       : pcre2-devel-10.32-3.el8_6.x86_64                      7/34
+    node2:   Installing       : ncurses-c++-libs-6.1-9.20180224.el8.x86_64            8/34
+    node2:   Installing       : ncurses-devel-6.1-9.20180224.el8.x86_64               9/34
+    node2:   Installing       : libverto-devel-0.3.0-5.el8.x86_64                    10/34
+    node2:   Installing       : libsepol-devel-2.9-3.el8.x86_64                      11/34
+    node2:   Installing       : libselinux-devel-2.9-5.el8.x86_64                    12/34
+    node2:   Installing       : libkadm5-1.18.2-14.el8.x86_64                        13/34
+    node2:   Installing       : libcom_err-devel-1.45.6-4.el8.x86_64                 14/34
+    node2:   Installing       : keyutils-libs-devel-1.5.10-9.el8.x86_64              15/34
+    node2:   Installing       : krb5-devel-1.18.2-14.el8.x86_64                      16/34
+    node2:   Installing       : kernel-headers-4.18.0-372.19.1.el8_6.x86_64          17/34
+    node2:   Running scriptlet: glibc-headers-2.28-189.5.el8_6.x86_64                18/34
+    node2:   Installing       : glibc-headers-2.28-189.5.el8_6.x86_64                18/34
+    node2:   Installing       : libxcrypt-devel-4.1.1-6.el8.x86_64                   19/34
+    node2:   Installing       : glibc-devel-2.28-189.5.el8_6.x86_64                  20/34
+    node2:   Running scriptlet: glibc-devel-2.28-189.5.el8_6.x86_64                  20/34
+    node2:   Installing       : emacs-filesystem-1:26.1-7.el8.noarch                 21/34
+    node2:   Installing       : perl-Git-2.31.1-2.el8.noarch                         22/34
+    node2:   Installing       : git-2.31.1-2.el8.x86_64                              23/34
+    node2:   Installing       : binutils-2.30-113.el8.x86_64                         24/34
+    node2:   Running scriptlet: binutils-2.30-113.el8.x86_64                         24/34
+    node2:   Installing       : gcc-8.5.0-10.1.el8_6.alma.x86_64                     25/34
+    node2:   Running scriptlet: gcc-8.5.0-10.1.el8_6.alma.x86_64                     25/34
+    node2:   Installing       : annobin-10.29-3.el8.x86_64                           26/34
+    node2:   Installing       : openssl-devel-1:1.1.1k-7.el8_6.x86_64                27/34
+    node2:   Installing       : readline-devel-7.0-10.el8.x86_64                     28/34
+    node2:   Running scriptlet: readline-devel-7.0-10.el8.x86_64                     28/34
+    node2: install-info: No such file or directory for /usr/share/info/history.info
+    node2:
+    node2:   Installing       : sqlite-devel-3.26.0-15.el8.x86_64                    29/34
+    node2:   Installing       : sshpass-1.09-4.el8.x86_64                            30/34
+    node2:   Installing       : xz-devel-5.2.4-4.el8_6.x86_64                        31/34
+    node2:   Installing       : make-1:4.2.1-11.el8.x86_64                           32/34
+    node2:   Running scriptlet: make-1:4.2.1-11.el8.x86_64                           32/34
+    node2:   Installing       : libffi-devel-3.1-23.el8.x86_64                       33/34
+    node2:   Running scriptlet: libffi-devel-3.1-23.el8.x86_64                       33/34
+    node2:   Installing       : bzip2-devel-1.0.6-26.el8.x86_64                      34/34
+    node2:   Running scriptlet: bzip2-devel-1.0.6-26.el8.x86_64                      34/34
+    node2:   Verifying        : binutils-2.30-113.el8.x86_64                          1/34
+    node2:   Verifying        : bzip2-devel-1.0.6-26.el8.x86_64                       2/34
+    node2:   Verifying        : emacs-filesystem-1:26.1-7.el8.noarch                  3/34
+    node2:   Verifying        : glibc-devel-2.28-189.5.el8_6.x86_64                   4/34
+    node2:   Verifying        : glibc-headers-2.28-189.5.el8_6.x86_64                 5/34
+    node2:   Verifying        : kernel-headers-4.18.0-372.19.1.el8_6.x86_64           6/34
+    node2:   Verifying        : keyutils-libs-devel-1.5.10-9.el8.x86_64               7/34
+    node2:   Verifying        : krb5-devel-1.18.2-14.el8.x86_64                       8/34
+    node2:   Verifying        : libcom_err-devel-1.45.6-4.el8.x86_64                  9/34
+    node2:   Verifying        : libffi-devel-3.1-23.el8.x86_64                       10/34
+    node2:   Verifying        : libkadm5-1.18.2-14.el8.x86_64                        11/34
+    node2:   Verifying        : libselinux-devel-2.9-5.el8.x86_64                    12/34
+    node2:   Verifying        : libsepol-devel-2.9-3.el8.x86_64                      13/34
+    node2:   Verifying        : libverto-devel-0.3.0-5.el8.x86_64                    14/34
+    node2:   Verifying        : libxcrypt-devel-4.1.1-6.el8.x86_64                   15/34
+    node2:   Verifying        : make-1:4.2.1-11.el8.x86_64                           16/34
+    node2:   Verifying        : ncurses-c++-libs-6.1-9.20180224.el8.x86_64           17/34
+    node2:   Verifying        : ncurses-devel-6.1-9.20180224.el8.x86_64              18/34
+    node2:   Verifying        : openssl-devel-1:1.1.1k-7.el8_6.x86_64                19/34
+    node2:   Verifying        : pcre2-devel-10.32-3.el8_6.x86_64                     20/34
+    node2:   Verifying        : pcre2-utf16-10.32-3.el8_6.x86_64                     21/34
+    node2:   Verifying        : pcre2-utf32-10.32-3.el8_6.x86_64                     22/34
+    node2:   Verifying        : readline-devel-7.0-10.el8.x86_64                     23/34
+    node2:   Verifying        : sqlite-3.26.0-15.el8.x86_64                          24/34
+    node2:   Verifying        : sqlite-devel-3.26.0-15.el8.x86_64                    25/34
+    node2:   Verifying        : xz-devel-5.2.4-4.el8_6.x86_64                        26/34
+    node2:   Verifying        : annobin-10.29-3.el8.x86_64                           27/34
+    node2:   Verifying        : gcc-8.5.0-10.1.el8_6.alma.x86_64                     28/34
+    node2:   Verifying        : git-2.31.1-2.el8.x86_64                              29/34
+    node2:   Verifying        : git-core-2.31.1-2.el8.x86_64                         30/34
+    node2:   Verifying        : git-core-doc-2.31.1-2.el8.noarch                     31/34
+    node2:   Verifying        : perl-Error-1:0.17025-2.el8.noarch                    32/34
+    node2:   Verifying        : perl-Git-2.31.1-2.el8.noarch                         33/34
+    node2:   Verifying        : sshpass-1.09-4.el8.x86_64                            34/34
+    node2:
+    node2: Installed:
+    node2:   annobin-10.29-3.el8.x86_64
+    node2:   binutils-2.30-113.el8.x86_64
+    node2:   bzip2-devel-1.0.6-26.el8.x86_64
+    node2:   emacs-filesystem-1:26.1-7.el8.noarch
+    node2:   gcc-8.5.0-10.1.el8_6.alma.x86_64
+    node2:   git-2.31.1-2.el8.x86_64
+    node2:   git-core-2.31.1-2.el8.x86_64
+    node2:   git-core-doc-2.31.1-2.el8.noarch
+    node2:   glibc-devel-2.28-189.5.el8_6.x86_64
+    node2:   glibc-headers-2.28-189.5.el8_6.x86_64
+    node2:   kernel-headers-4.18.0-372.19.1.el8_6.x86_64
+    node2:   keyutils-libs-devel-1.5.10-9.el8.x86_64
+    node2:   krb5-devel-1.18.2-14.el8.x86_64
+    node2:   libcom_err-devel-1.45.6-4.el8.x86_64
+    node2:   libffi-devel-3.1-23.el8.x86_64
+    node2:   libkadm5-1.18.2-14.el8.x86_64
+    node2:   libselinux-devel-2.9-5.el8.x86_64
+    node2:   libsepol-devel-2.9-3.el8.x86_64
+    node2:   libverto-devel-0.3.0-5.el8.x86_64
+    node2:   libxcrypt-devel-4.1.1-6.el8.x86_64
+    node2:   make-1:4.2.1-11.el8.x86_64
+    node2:   ncurses-c++-libs-6.1-9.20180224.el8.x86_64
+    node2:   ncurses-devel-6.1-9.20180224.el8.x86_64
+    node2:   openssl-devel-1:1.1.1k-7.el8_6.x86_64
+    node2:   pcre2-devel-10.32-3.el8_6.x86_64
+    node2:   pcre2-utf16-10.32-3.el8_6.x86_64
+    node2:   pcre2-utf32-10.32-3.el8_6.x86_64
+    node2:   perl-Error-1:0.17025-2.el8.noarch
+    node2:   perl-Git-2.31.1-2.el8.noarch
+    node2:   readline-devel-7.0-10.el8.x86_64
+    node2:   sqlite-3.26.0-15.el8.x86_64
+    node2:   sqlite-devel-3.26.0-15.el8.x86_64
+    node2:   sshpass-1.09-4.el8.x86_64
+    node2:   xz-devel-5.2.4-4.el8_6.x86_64
+    node2:
+    node2: Complete!
+    node2: Docker CE Stable - x86_64                        75 kB/s |  26 kB     00:00
+    node2: Dependencies resolved.
+    node2: ========================================================================================================
+    node2:  Package                        Arch    Version                                  Repository         Size
+    node2: ========================================================================================================
+    node2: Installing:
+    node2:  containerd.io                  x86_64  1.6.8-3.1.el8                            docker-ce-stable   33 M
+    node2:  docker-ce                      x86_64  3:20.10.17-3.el8                         docker-ce-stable   22 M
+    node2:  docker-ce-cli                  x86_64  1:20.10.17-3.el8                         docker-ce-stable   29 M
+    node2: Installing dependencies:
+    node2:  checkpolicy                    x86_64  2.9-1.el8                                baseos            347 k
+    node2:  container-selinux              noarch  2:2.188.0-1.module_el8.6.0+3070+1510fbd1 appstream          58 k
+    node2:  docker-ce-rootless-extras      x86_64  20.10.17-3.el8                           docker-ce-stable  4.7 M
+    node2:  fuse-common                    x86_64  3.3.0-15.el8                             baseos             21 k
+    node2:  fuse-overlayfs                 x86_64  1.9-1.module_el8.6.0+3070+1510fbd1       appstream          72 k
+    node2:  fuse3                          x86_64  3.3.0-15.el8                             baseos             53 k
+    node2:  fuse3-libs                     x86_64  3.3.0-15.el8                             baseos             94 k
+    node2:  libcgroup                      x86_64  0.41-19.el8                              baseos             69 k
+    node2:  libslirp                       x86_64  4.4.0-1.module_el8.6.0+2878+e681bc44     appstream          69 k
+    node2:  policycoreutils-python-utils   noarch  2.9-19.el8                               baseos            252 k
+    node2:  python3-audit                  x86_64  3.0.7-2.el8.2                            baseos             86 k
+    node2:  python3-libsemanage            x86_64  2.9-8.el8                                baseos            127 k
+    node2:  python3-policycoreutils        noarch  2.9-19.el8                               baseos            2.2 M
+    node2:  python3-setools                x86_64  4.3.0-3.el8                              baseos            623 k
+    node2:  slirp4netns                    x86_64  1.2.0-2.module_el8.6.0+3070+1510fbd1     appstream          53 k
+    node2: Installing weak dependencies:
+    node2:  docker-scan-plugin             x86_64  0.17.0-3.el8                             docker-ce-stable  3.8 M
+    node2: Enabling module streams:
+    node2:  container-tools                        rhel8
+    node2:
+    node2: Transaction Summary
+    node2: ========================================================================================================
+    node2: Install  19 Packages
+    node2:
+    node2: Total download size: 97 M
+    node2: Installed size: 400 M
+    node2: Downloading Packages:
+    node2: (1/19): fuse-common-3.3.0-15.el8.x86_64.rpm     435 kB/s |  21 kB     00:00
+    node2: (2/19): fuse3-3.3.0-15.el8.x86_64.rpm           944 kB/s |  53 kB     00:00
+    node2: (3/19): fuse3-libs-3.3.0-15.el8.x86_64.rpm      2.0 MB/s |  94 kB     00:00
+    node2: (4/19): libcgroup-0.41-19.el8.x86_64.rpm        1.6 MB/s |  69 kB     00:00
+    node2: (5/19): python3-audit-3.0.7-2.el8.2.x86_64.rpm  2.8 MB/s |  86 kB     00:00
+    node2: (6/19): checkpolicy-2.9-1.el8.x86_64.rpm        2.5 MB/s | 347 kB     00:00
+    node2: (7/19): policycoreutils-python-utils-2.9-19.el8 3.5 MB/s | 252 kB     00:00
+    node2: (8/19): python3-libsemanage-2.9-8.el8.x86_64.rp 3.0 MB/s | 127 kB     00:00
+    node2: (9/19): python3-setools-4.3.0-3.el8.x86_64.rpm  8.3 MB/s | 623 kB     00:00
+    node2: (10/19): container-selinux-2.188.0-1.module_el8 652 kB/s |  58 kB     00:00
+    node2: (11/19): python3-policycoreutils-2.9-19.el8.noa  15 MB/s | 2.2 MB     00:00
+    node2: (12/19): libslirp-4.4.0-1.module_el8.6.0+2878+e 1.7 MB/s |  69 kB     00:00
+    node2: (13/19): fuse-overlayfs-1.9-1.module_el8.6.0+30 864 kB/s |  72 kB     00:00
+    node2: (14/19): slirp4netns-1.2.0-2.module_el8.6.0+307 633 kB/s |  53 kB     00:00
+    node2: (15/19): containerd.io-1.6.8-3.1.el8.x86_64.rpm  34 MB/s |  33 MB     00:00
+    node2: (16/19): docker-ce-20.10.17-3.el8.x86_64.rpm     19 MB/s |  22 MB     00:01
+    node2: (17/19): docker-ce-rootless-extras-20.10.17-3.e  19 MB/s | 4.7 MB     00:00
+    node2: (18/19): docker-scan-plugin-0.17.0-3.el8.x86_64  31 MB/s | 3.8 MB     00:00
+    node2: (19/19): docker-ce-cli-20.10.17-3.el8.x86_64.rp  18 MB/s |  29 MB     00:01
+    node2: --------------------------------------------------------------------------------
+    node2: Total                                            28 MB/s |  97 MB     00:03
+    node2: Docker CE Stable - x86_64                        42 kB/s | 1.6 kB     00:00
+    node2: Importing GPG key 0x621E9F35:
+    node2:  Userid     : "Docker Release (CE rpm) <docker@docker.com>"
+    node2:  Fingerprint: 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35
+    node2:  From       : https://download.docker.com/linux/centos/gpg
+    node2: Key imported successfully
+    node2: Running transaction check
+    node2: Transaction check succeeded.
+    node2: Running transaction test
+    node2: Transaction test succeeded.
+    node2: Running transaction
+    node2:   Preparing        :                                                        1/1
+    node2:   Installing       : docker-scan-plugin-0.17.0-3.el8.x86_64                1/19
+    node2:   Running scriptlet: docker-scan-plugin-0.17.0-3.el8.x86_64                1/19
+    node2:   Installing       : docker-ce-cli-1:20.10.17-3.el8.x86_64                 2/19
+    node2:   Running scriptlet: docker-ce-cli-1:20.10.17-3.el8.x86_64                 2/19
+    node2:   Installing       : fuse3-libs-3.3.0-15.el8.x86_64                        3/19
+    node2:   Running scriptlet: fuse3-libs-3.3.0-15.el8.x86_64                        3/19
+    node2:   Installing       : libslirp-4.4.0-1.module_el8.6.0+2878+e681bc44.x86_    4/19
+    node2:   Installing       : slirp4netns-1.2.0-2.module_el8.6.0+3070+1510fbd1.x    5/19
+    node2:   Installing       : python3-setools-4.3.0-3.el8.x86_64                    6/19
+    node2:   Installing       : python3-libsemanage-2.9-8.el8.x86_64                  7/19
+    node2:   Installing       : python3-audit-3.0.7-2.el8.2.x86_64                    8/19
+    node2:   Running scriptlet: libcgroup-0.41-19.el8.x86_64                          9/19
+    node2:   Installing       : libcgroup-0.41-19.el8.x86_64                          9/19
+    node2:   Running scriptlet: libcgroup-0.41-19.el8.x86_64                          9/19
+    node2:   Installing       : fuse-common-3.3.0-15.el8.x86_64                      10/19
+    node2:   Installing       : fuse3-3.3.0-15.el8.x86_64                            11/19
+    node2:   Installing       : fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.   12/19
+    node2:   Running scriptlet: fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.   12/19
+    node2:   Installing       : checkpolicy-2.9-1.el8.x86_64                         13/19
+    node2:   Installing       : python3-policycoreutils-2.9-19.el8.noarch            14/19
+    node2:   Installing       : policycoreutils-python-utils-2.9-19.el8.noarch       15/19
+    node2:   Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+   16/19
+    node2:   Installing       : container-selinux-2:2.188.0-1.module_el8.6.0+3070+   16/19
+    node2:   Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+   16/19
+    node2:   Installing       : containerd.io-1.6.8-3.1.el8.x86_64                   17/19
+    node2:   Running scriptlet: containerd.io-1.6.8-3.1.el8.x86_64                   17/19
+    node2:   Installing       : docker-ce-rootless-extras-20.10.17-3.el8.x86_64      18/19
+    node2:   Running scriptlet: docker-ce-rootless-extras-20.10.17-3.el8.x86_64      18/19
+    node2:   Installing       : docker-ce-3:20.10.17-3.el8.x86_64                    19/19
+    node2:   Running scriptlet: docker-ce-3:20.10.17-3.el8.x86_64                    19/19
+    node2:   Running scriptlet: container-selinux-2:2.188.0-1.module_el8.6.0+3070+   19/19
+    node2:   Running scriptlet: docker-ce-3:20.10.17-3.el8.x86_64                    19/19
+    node2:   Verifying        : checkpolicy-2.9-1.el8.x86_64                          1/19
+    node2:   Verifying        : fuse-common-3.3.0-15.el8.x86_64                       2/19
+    node2:   Verifying        : fuse3-3.3.0-15.el8.x86_64                             3/19
+    node2:   Verifying        : fuse3-libs-3.3.0-15.el8.x86_64                        4/19
+    node2:   Verifying        : libcgroup-0.41-19.el8.x86_64                          5/19
+    node2:   Verifying        : policycoreutils-python-utils-2.9-19.el8.noarch        6/19
+    node2:   Verifying        : python3-audit-3.0.7-2.el8.2.x86_64                    7/19
+    node2:   Verifying        : python3-libsemanage-2.9-8.el8.x86_64                  8/19
+    node2:   Verifying        : python3-policycoreutils-2.9-19.el8.noarch             9/19
+    node2:   Verifying        : python3-setools-4.3.0-3.el8.x86_64                   10/19
+    node2:   Verifying        : container-selinux-2:2.188.0-1.module_el8.6.0+3070+   11/19
+    node2:   Verifying        : fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.   12/19
+    node2:   Verifying        : libslirp-4.4.0-1.module_el8.6.0+2878+e681bc44.x86_   13/19
+    node2:   Verifying        : slirp4netns-1.2.0-2.module_el8.6.0+3070+1510fbd1.x   14/19
+    node2:   Verifying        : containerd.io-1.6.8-3.1.el8.x86_64                   15/19
+    node2:   Verifying        : docker-ce-3:20.10.17-3.el8.x86_64                    16/19
+    node2:   Verifying        : docker-ce-cli-1:20.10.17-3.el8.x86_64                17/19
+    node2:   Verifying        : docker-ce-rootless-extras-20.10.17-3.el8.x86_64      18/19
+    node2:   Verifying        : docker-scan-plugin-0.17.0-3.el8.x86_64               19/19
+    node2:
+    node2: Installed:
+    node2:   checkpolicy-2.9-1.el8.x86_64
+    node2:   container-selinux-2:2.188.0-1.module_el8.6.0+3070+1510fbd1.noarch
+    node2:   containerd.io-1.6.8-3.1.el8.x86_64
+    node2:   docker-ce-3:20.10.17-3.el8.x86_64
+    node2:   docker-ce-cli-1:20.10.17-3.el8.x86_64
+    node2:   docker-ce-rootless-extras-20.10.17-3.el8.x86_64
+    node2:   docker-scan-plugin-0.17.0-3.el8.x86_64
+    node2:   fuse-common-3.3.0-15.el8.x86_64
+    node2:   fuse-overlayfs-1.9-1.module_el8.6.0+3070+1510fbd1.x86_64
+    node2:   fuse3-3.3.0-15.el8.x86_64
+    node2:   fuse3-libs-3.3.0-15.el8.x86_64
+    node2:   libcgroup-0.41-19.el8.x86_64
+    node2:   libslirp-4.4.0-1.module_el8.6.0+2878+e681bc44.x86_64
+    node2:   policycoreutils-python-utils-2.9-19.el8.noarch
+    node2:   python3-audit-3.0.7-2.el8.2.x86_64
+    node2:   python3-libsemanage-2.9-8.el8.x86_64
+    node2:   python3-policycoreutils-2.9-19.el8.noarch
+    node2:   python3-setools-4.3.0-3.el8.x86_64
+    node2:   slirp4netns-1.2.0-2.module_el8.6.0+3070+1510fbd1.x86_64
+    node2:
+    node2: Complete!
+    node2: Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+    node2:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    node2:                                  Dload  Upload   Total   Spent    Left  Speed
+100   270  100   270    0     0    416      0 --:--:-- --:--:-- --:--:--   416
+    node2: Cloning into '/root/.pyenv'...
+    node2: Cloning into '/root/.pyenv/plugins/pyenv-doctor'...
+    node2: Cloning into '/root/.pyenv/plugins/pyenv-installer'...
+    node2: Cloning into '/root/.pyenv/plugins/pyenv-update'...
+    node2: Cloning into '/root/.pyenv/plugins/pyenv-virtualenv'...
+    node2: Cloning into '/root/.pyenv/plugins/pyenv-which-ext'...
+    node2:
+    node2: WARNING: seems you still have not added 'pyenv' to the load path.
+    node2:
+    node2: # Load pyenv automatically by appending
+    node2: # the following to
+    node2: ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+    node2: and ~/.bashrc (for interactive shells) :
+    node2:
+    node2: export PYENV_ROOT="$HOME/.pyenv"
+    node2: command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    node2: eval "$(pyenv init -)"
+    node2:
+    node2: # Restart your shell for the changes to take effect.
+    node2:
+    node2: # Load pyenv-virtualenv automatically by adding
+    node2: # the following to ~/.bashrc:
+    node2:
+    node2: eval "$(pyenv virtualenv-init -)"
+    node2:
+    node2: Downloading Python-3.10.6.tar.xz...
+    node2: -> https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tar.xz
+    node2: Installing Python-3.10.6...
+    node2: Installed Python-3.10.6 to /root/.pyenv/versions/3.10.6
+    node2:
+    node2: Collecting pipenv
+    node2:   Downloading pipenv-2022.8.24-py2.py3-none-any.whl (3.4 MB)
+    node2:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 17.5 MB/s eta 0:00:00
+    node2: Collecting selinux
+    node2:   Downloading selinux-0.2.1-py2.py3-none-any.whl (4.3 kB)
+    node2: Collecting certifi
+    node2:   Downloading certifi-2022.6.15-py3-none-any.whl (160 kB)
+    node2:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.2/160.2 kB 13.6 MB/s eta 0:00:00
+    node2: Collecting virtualenv-clone>=0.2.5
+    node2:   Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)
+    node2: Requirement already satisfied: setuptools>=36.2.1 in ./.pyenv/versions/3.10.6/lib/python3.10/site-packages (from pipenv) (63.2.0)
+    node2: Collecting virtualenv
+    node2:   Downloading virtualenv-20.16.3-py2.py3-none-any.whl (8.8 MB)
+    node2:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 8.4 MB/s eta 0:00:00
+    node2: Collecting distro>=1.3.0
+    node2:   Downloading distro-1.7.0-py3-none-any.whl (20 kB)
+    node2: Collecting distlib<1,>=0.3.5
+    node2:   Downloading distlib-0.3.6-py2.py3-none-any.whl (468 kB)
+    node2:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.5/468.5 kB 11.0 MB/s eta 0:00:00
+    node2: Collecting filelock<4,>=3.4.1
+    node2:   Downloading filelock-3.8.0-py3-none-any.whl (10 kB)
+    node2: Collecting platformdirs<3,>=2.4
+    node2:   Downloading platformdirs-2.5.2-py3-none-any.whl (14 kB)
+    node2: Installing collected packages: distlib, virtualenv-clone, platformdirs, filelock, distro, certifi, virtualenv, selinux, pipenv
+    node2: Successfully installed certifi-2022.6.15 distlib-0.3.6 distro-1.7.0 filelock-3.8.0 pipenv-2022.8.24 platformdirs-2.5.2 selinux-0.2.1 virtualenv-20.16.3 virtualenv-clone-0.5.7
+    node2: WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+    node2:
+    node2: [notice] A new release of pip available: 22.2.1 -> 22.2.2
+    node2: [notice] To update, run: pip install --upgrade pip
+    node2: Requirement already satisfied: pip in ./.pyenv/versions/3.10.6/lib/python3.10/site-packages (22.2.1)
+    node2: Collecting pip
+    node2:   Downloading pip-22.2.2-py3-none-any.whl (2.0 MB)
+    node2:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 48.1 MB/s eta 0:00:00
+    node2: Installing collected packages: pip
+    node2:   Attempting uninstall: pip
+    node2:     Found existing installation: pip 22.2.1
+    node2:     Uninstalling pip-22.2.1:
+    node2:       Successfully uninstalled pip-22.2.1
+    node2: Successfully installed pip-22.2.2
+    node2: WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
