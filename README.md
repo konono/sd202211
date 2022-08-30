@@ -32,6 +32,7 @@ sudo reboot
 ### pythonのマルチバージョン環境の構築とpipenvのインストール
 
 pyenvはpythonのマルチバージョン環境を構築することができるツールです。
+
 Ansible roleを開発するだけだとpythonのバージョンについてあまり意識することが無いかもしれません。しかし、Ansible自体や、Ansible moduleはpythonで動いているため、厳密にはそれぞれpythonに対してのrequirementが存在しています。
 
 そのためテスト環境ではどのpythonバージョンとAnsibleバージョンであれば動作するということを確認できる必要があるため導入しています。
@@ -96,6 +97,7 @@ Pipfileにはpythonのバージョンも記述することができ、pyevnが�
 またPipfileの他にPipfile.lockというファイルも作成され動的に変更されます、このファイルは明示的にインストールしたものだけでなく依存関係の解決のためにインストールされたpip packageのインストールされた時点のバージョンまで記録されています、そのためpipenvをインストールしている環境同士であればPipfile.lockファイルがあるディレクトリでpipenv syncコマンドを実行するだけで全く同じpythonのvirtual env環境を構築することができます。
 
 Pipfileのサンプル
+
 ```
 [root@node1 sd202211]# cat Pipfile
 [[source]]
@@ -173,7 +175,8 @@ gpgcheck=1
 gpgkey=https://download.docker.com/linux/centos/gpg
 EOF
 ```
-docker CEのインストールとdocker deamonの立ち上げ
+
+docker CEのインストールとdocker deamonの立ち上げを行います。
 
 ```
 dnf install -y docker-ce docker-ce-cli containerd.io
@@ -221,4 +224,6 @@ INFO     Verifier completed successfully.
 === snip ===
 ```
 
-ログが長いためここでは省略いたしますが、```Verifier completed successfully.```が確認できればmoleculeのインストールは無事完了です！お疲れさまでした！
+ログが長いためここでは省略いたしますが、```Verifier completed successfully.```が確認できればmoleculeのインストールは無事完了です！
+
+お疲れさまでした！
