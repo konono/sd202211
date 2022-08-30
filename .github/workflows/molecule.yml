@@ -1,7 +1,18 @@
 ---
 name: 'Molecule Tests'
 on:
-  - 'push'
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - 'roles/**'
+      - 'tox.ini'
+  push:
+    branches:
+      - 'master'
+    paths:
+      - '.github/workflows/**'
+      - 'roles/**'
+      - 'tox.ini'
 jobs:
   build:
     runs-on: 'ubuntu-latest'
