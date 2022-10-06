@@ -1,7 +1,7 @@
 # Software Design 2022年 11月号 handson material
 このレポジトリは**Software Design 2022年 11月号**で紹介されているサンプルが配置されています。
 
-また、本誌ではボリュームの問題で解説できなかったVagrantfileの中で行っているpythonの開発環境から、Pipenv、docker、moleculeの導入までの手順をMoleculeの動作環境構築で解説させてもらっています。
+また、本誌ではボリュームの問題で解説できなかったVagrantfileの中で行っているpythonの開発環境から、Pipenv、docker、moleculeの導入までの手順を[Moleculeの動作環境構築](https://github.com/konono/sd202211/blob/master/README.md#molecule%E3%81%AE%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89)で解説させてもらっています。
 
 ## ディレクトリの説明
 - .github  <- github action用のファイル
